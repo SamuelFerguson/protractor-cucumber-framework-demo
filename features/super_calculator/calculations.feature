@@ -4,9 +4,6 @@ Feature: Calculations
   As a Curious Developer
   I'd like to see an example
 
-  Background:
-
-    Given Callie decides to use the Super Calculator
 
   @important @smoke
   Scenario: Adding numbers
@@ -16,7 +13,7 @@ Feature: Calculations
 
   By the way, did you notice that with **Serenity/JS** you can use [Markdown](https://en.wikipedia.org/wiki/Markdown)
   to better describe each `Feature` and `Scenario`?
-
+    Given Callie decides to use the Super Calculator
     When she adds 19 and 23
     Then she should see that the result is 42
 
@@ -24,7 +21,7 @@ Feature: Calculations
   Scenario Outline: Multiplying numbers
 
   The great thing about Serenity/JS reports is that they aggregate all the examples from a `Scenario Outline`.
-
+    Given Callie decides to use the Super Calculator
     When she multiplies <first> and <second>
     Then she should see that the result is <expected>
 
@@ -32,3 +29,15 @@ Feature: Calculations
       | first | second | expected | comment          |
       | -5    | -3     | 15       | Negative numbers |
       | 6     | 2      | 12       | Positive numbers |
+
+
+  @important @smoke @fast
+  Scenario Outline: Logging into Salesforce Beta
+  Given the user opens Salesforce beta
+  And I enter <username> with <password>
+
+Examples:
+
+|username|password|
+|sam.fergusone@bb2bank.com|Challenge12!|
+

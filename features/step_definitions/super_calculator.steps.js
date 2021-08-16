@@ -30,18 +30,28 @@ Then('she should see that the result is {word}', async (expectedResult) => {
         strictEqual(result, expectedResult)
     })
 
-Given(/.* the user opens Salesforce beta/, async () => {
-    await browser.get('beta.my.salesforce.com');
-})
 
-When('I enter {word} with {word}', async (username, password) => {
+
+Given(/.* the user opens Salesforce beta/, async () => {
+    await browser.get('/beta.my.salesforce.com/')
+    
+  })
+
+  And('I enter {string} with {string}', async (username, password) => {
     await element(by.name('username')).sendKeys(username)
     await element(by.name('pw')).sendKeys(password)
     await element(by.name('login')).click()
-})
+  })
+
+  Given('the user opens Salesforce beta', function () {
+    browser.get('beta.my.salesforce.com')
+  })
+
+  Given('I enter sam.fergusone@bb2bank.com with Challenge12!', function (username, password) {
+    element(by.name('username')).sendKeys(username)
+    element(by.name('pw')).sendKeys(password)
+    element(by.name('login')).click()
+  })
 
 
-
-
-    
 })

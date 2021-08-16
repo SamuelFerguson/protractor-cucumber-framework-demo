@@ -12,9 +12,7 @@
 
   "include": [
     "src/**/*.ts",
-    "features/**/*.ts",
-    "src/**/*.js",
-    "features/**/*.js"
+    "features/**/*.ts"
   ],
 
   "exclude": [

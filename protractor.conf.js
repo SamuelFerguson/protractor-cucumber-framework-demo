@@ -6,7 +6,7 @@ const
     isCI = require('is-ci');
 
 exports.config = {
-    baseUrl: 'https://juliemr.github.io/',
+    baseUrl: 'https://bb2bank--',
 
     chromeDriver: require(`chromedriver/lib/chromedriver`).path,
 
