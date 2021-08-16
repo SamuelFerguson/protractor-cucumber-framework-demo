@@ -29,4 +29,19 @@ Then('she should see that the result is {word}', async (expectedResult) => {
     await element(by.css('h2')).getText().then(result => {
         strictEqual(result, expectedResult)
     })
+
+Given(/.* the user opens Salesforce beta/, async () => {
+    await browser.get('beta.my.salesforce.com');
+})
+
+When('I enter {word} with {word}', async (username, password) => {
+    await element(by.name('username')).sendKeys(username)
+    await element(by.name('pw')).sendKeys(password)
+    await element(by.name('login')).click()
+})
+
+
+
+
+    
 })
